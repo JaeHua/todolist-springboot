@@ -1,12 +1,22 @@
 package com.jaehua.todolist.security;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jaehua.todolist.common.Result;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.validation.FieldError;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -16,7 +26,10 @@ import java.util.stream.Collectors;
  * 同时适用于使用 @RestController 注解的控制器。它结合了 @ControllerAdvice 和 @ResponseBody 的功能
  */
 @RestControllerAdvice
-public class GlobalExceptionHandler {
+@RequiredArgsConstructor
+public class GlobalExceptionHandler  {
+
+    private final ObjectMapper objectMapper;
 
     //MethodArgumentNotValidException 类型的异常通常在使用 Spring 的数据绑定和验证时发生
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -35,4 +48,5 @@ public class GlobalExceptionHandler {
         // Return the combined error message as part of the Result
         return Result.error(HttpStatus.BAD_REQUEST.value(), combinedErrorMessage);
     }
+
 } 

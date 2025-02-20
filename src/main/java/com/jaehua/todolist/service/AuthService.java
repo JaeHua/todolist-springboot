@@ -1,5 +1,6 @@
 package com.jaehua.todolist.service;
 
+import com.jaehua.todolist.dto.LoginRequest;
 import com.jaehua.todolist.dto.RegisterRequest;
 
 /**
@@ -7,6 +8,6 @@ import com.jaehua.todolist.dto.RegisterRequest;
  */
 public interface AuthService {
     void register(RegisterRequest request);
-    String login(RegisterRequest request);
+    String login(LoginRequest request);
     void logout();
 }

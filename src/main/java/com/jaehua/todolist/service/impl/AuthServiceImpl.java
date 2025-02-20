@@ -1,9 +1,11 @@
 package com.jaehua.todolist.service.impl;
 
+import com.jaehua.todolist.dto.LoginRequest;
 import com.jaehua.todolist.dto.RegisterRequest;
 import com.jaehua.todolist.entity.User;
 import com.jaehua.todolist.mapper.UserMapper;
 import com.jaehua.todolist.service.AuthService;
+import com.jaehua.todolist.utils.JwtUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {
     private final UserMapper userMapper;
+    private final JwtUtils jwtUtils;
 
     @Override
     public void register(RegisterRequest request) {
@@ -34,8 +37,12 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public String login(RegisterRequest request) {
-        return "";
+    public String login(LoginRequest request) {
+       User user = userMapper.findByUsername(request.getUsername());
+       if(user == null|| !Objects.equals(user.getPassword(),request.getPassword())){
+           throw new RuntimeException("用户名或密码错误");
+       }
+       return jwtUtils.generateToken(user.getUsername());
     }
 
     @Override
