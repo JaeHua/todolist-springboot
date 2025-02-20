@@ -17,6 +17,13 @@ spring:
     locations: classpath:db/migration
     clean-disabled: true
     validate-on-migrate: true
+  # DevTools配置
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+      exclude: static/**
+
 # MyBatis-Plus配置
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
@@ -36,4 +43,15 @@ mybatis-plus:
 #    root: debug
 #    org.flywaydb: debug
 #    org.springframework: debug
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+  packages-to-scan: com.jaehua.todolist.controller
+
 
