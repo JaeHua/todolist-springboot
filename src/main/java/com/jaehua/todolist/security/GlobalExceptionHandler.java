@@ -2,6 +2,8 @@ package com.jaehua.todolist.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jaehua.todolist.common.Result;
+import com.jaehua.todolist.exception.BusinessException;
+import com.jaehua.todolist.exception.ErrorCode;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -46,7 +48,22 @@ public class GlobalExceptionHandler  {
         String combinedErrorMessage = String.join("; ", errors.values());
 
         // Return the combined error message as part of the Result
-        return Result.error(HttpStatus.BAD_REQUEST.value(), combinedErrorMessage);
+        return Result.error(
+            ErrorCode.VALIDATION_ERROR.getCode(), 
+            combinedErrorMessage
+        );
     }
 
+    @ExceptionHandler(BusinessException.class)
+    public Result<Void> handleBusinessException(BusinessException ex) {
+        return Result.error(ex.getCode(), ex.getMessage());
+    }
+
+    @ExceptionHandler(AccessDeniedException.class)
+    public Result<Void> handleAccessDeniedException(AccessDeniedException ex) {
+        return Result.error(
+            ErrorCode.FORBIDDEN.getCode(), 
+            ErrorCode.FORBIDDEN.getMessage()
+        );
+    }
 } 

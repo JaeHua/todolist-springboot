@@ -1,4 +1,4 @@
-package com.jaehua.todolist.controller;
+package com.jaehua.todolist.controller.v1;
 
 import com.jaehua.todolist.common.Result;
 import com.jaehua.todolist.dto.LoginRequest;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
 @Tag(name = "Authentication", description = "Authentication management APIs")
 public class AuthController {
@@ -26,22 +26,14 @@ public class AuthController {
     @Operation(summary = "Register a new user", description = "Register a new user with username, password and email")
     @PostMapping("/register")
     public Result<User> register(@Valid @RequestBody RegisterRequest request) {
-        try {
             authService.register(request);
             User user = userMapper.findByUsername(request.getUsername());
             return Result.success(user);
-        } catch (Exception e) {
-            return Result.error(500, e.getMessage());
-        }
     }
     @Operation(summary = "Login", description = "Login with username and password")
     @PostMapping("/login")
     public Result<String> login(@Valid @RequestBody LoginRequest request) {
-        try {
             String token = authService.login(request);
             return Result.success(token);
-        } catch (Exception e) {
-            return Result.error(500, e.getMessage());
-        }
     }
 }

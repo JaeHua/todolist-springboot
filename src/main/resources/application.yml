@@ -23,6 +23,8 @@ spring:
       enabled: true
       additional-paths: src/main/java
       exclude: static/**
+  profiles:
+    active: dev  # 默认使用开发环境
 
 # MyBatis-Plus配置
 mybatis-plus:
