@@ -34,7 +34,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    @CacheEvict(value = CacheConfig.TASK_LIST_CACHE, allEntries = true)  // 只清除列表缓存
+    @CacheEvict(value = CacheConfig.TASK_LIST_CACHE, allEntries = true)
     public Task createTask(TaskRequest taskRequest) {
         Task task = new Task();
         task.setTitle(taskRequest.getTitle());
@@ -44,7 +44,7 @@ public class TaskServiceImpl implements TaskService {
         task.setUpdatedAt(LocalDateTime.now());
         task.setUserId(SecurityUtils.getCurrentUserId());
         taskMapper.insert(task);
-        return task;  // 返回创建的任务
+        return task;
     }
 
     @Override

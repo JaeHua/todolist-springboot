@@ -60,4 +60,23 @@ springdoc:
     enabled: true
   packages-to-scan: com.jaehua.todolist.controller
 
+# 日志配置
+logging:
+  pattern:
+    console: "%clr(%d{${LOG_DATEFORMAT_PATTERN:yyyy-MM-dd HH:mm:ss.SSS}}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
+    file: "%d{${LOG_DATEFORMAT_PATTERN:yyyy-MM-dd HH:mm:ss.SSS}} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } [%t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
+  file:
+    name: logs/todolist.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: logs/todolist.%d{yyyy-MM-dd}.%i.log
+      max-file-size: 10MB
+      max-history: 30
+      total-size-cap: 3GB
+  level:
+    root: INFO
+    com.jaehua.todolist: DEBUG
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+
 
