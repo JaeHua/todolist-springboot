@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class LogAspect {
-
+    // Pointcut 注解，表明该方法定义了连接点，连接点指在代码中指定的位置
     @Pointcut("execution(* com.jaehua.todolist.controller.v1..*.*(..))")
     public void controllerPointcut() {}
 

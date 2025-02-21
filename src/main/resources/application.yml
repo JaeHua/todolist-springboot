@@ -25,14 +25,19 @@ spring:
       exclude: static/**
   profiles:
     active: dev  # 默认使用开发环境
+  # Redis配置
+  cache:
+    type: redis
+    cache-names:
+      - taskCache
+      - taskListCache
 
-# MyBatis-Plus配置
+# MyBatis-Plus通用配置
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.jaehua.todolist.entity
   configuration:
     map-underscore-to-camel-case: true
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
     db-config:
       id-type: auto
@@ -40,23 +45,16 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
 
-#logging:
-#  level:
-#    root: debug
-#    org.flywaydb: debug
-#    org.springframework: debug
-
 # JWT配置
 jwt:
   secret: 5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437
   expiration: 86400
 
-# Swagger配置
+# Swagger通用配置
 springdoc:
   api-docs:
     enabled: true
     path: /v3/api-docs
-
   swagger-ui:
     path: /swagger-ui.html
     enabled: true

@@ -2,11 +2,37 @@ server:
   port: 8080
 
 spring:
+  application:
+    name: TodoList
+    version: 1.0.0
+  
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/todolist?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/todolist?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
     username: root
     password: jh529529
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+      timeout: 10000
+      lettuce:
+        pool:
+          max-active: 8
+          max-wait: -1
+          max-idle: 8
+          min-idle: 0
+  
+  cache:
+    type: redis
+    redis:
+      time-to-live: 3600000  # 1小时
+      cache-null-values: false
+    cache-names:
+      - taskCache
+      - taskListCache
 
   flyway:
     enabled: true
@@ -15,10 +41,11 @@ spring:
     clean-disabled: true
     validate-on-migrate: true
 
-mybatis-plus:
-  mapper-locations: classpath:mapper/*.xml
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+      exclude: static/**
 
 logging:
   level:
@@ -27,4 +54,8 @@ logging:
 
 jwt:
   secret: 5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437
-  expiration: 86400 
+  expiration: 86400
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
