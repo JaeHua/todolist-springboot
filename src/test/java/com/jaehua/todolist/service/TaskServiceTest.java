@@ -21,7 +21,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-@SpringBootTest
+@SpringBootTest(properties = {
+    "spring.cache.type=none"  // 禁用缓存
+})
 @ActiveProfiles("test")  // 使用测试配置文件
 class TaskServiceTest {
 
