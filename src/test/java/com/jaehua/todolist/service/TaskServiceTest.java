@@ -1,6 +1,5 @@
 package com.jaehua.todolist.service;
 
-
 import com.jaehua.todolist.dto.TaskRequest;
 import com.jaehua.todolist.entity.Task;
 import com.jaehua.todolist.entity.User;
@@ -12,7 +11,7 @@ import org.mockito.ArgumentCaptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.ApplicationContext;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 
@@ -20,10 +19,10 @@ import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
-
 import static org.mockito.Mockito.*;
 
 @SpringBootTest
+@ActiveProfiles("test")  // 使用测试配置文件
 class TaskServiceTest {
 
     @Autowired
@@ -32,9 +31,6 @@ class TaskServiceTest {
     /// 模拟的对象，用于测试期间替代实际的数据库操作
     @MockBean
     private TaskMapper taskMapper;
-
-    @Autowired
-    private ApplicationContext applicationContext;
 
     private User testUser;
     private Task testTask;
