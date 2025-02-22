@@ -16,6 +16,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.context.annotation.Import;
 import com.jaehua.todolist.config.TestCacheConfig;
+import com.jaehua.todolist.config.TestRedisConfig;
 
 import java.time.LocalDateTime;
 
@@ -23,10 +24,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-@SpringBootTest(properties = {
-    "spring.cache.type=none",
-    "spring.main.allow-bean-definition-overriding=true"
-})
+@SpringBootTest
+@Import(TestRedisConfig.class)
 @ActiveProfiles("test")
 class TaskServiceTest {
 
