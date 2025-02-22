@@ -14,6 +14,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.context.annotation.Import;
+import com.jaehua.todolist.config.TestCacheConfig;
 
 import java.time.LocalDateTime;
 
@@ -22,9 +24,10 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @SpringBootTest(properties = {
-    "spring.cache.type=none"  // 禁用缓存
+    "spring.cache.type=none",
+    "spring.main.allow-bean-definition-overriding=true"
 })
-@ActiveProfiles("test")  // 使用测试配置文件
+@ActiveProfiles("test")
 class TaskServiceTest {
 
     @Autowired

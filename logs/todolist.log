@@ -2133,3 +2133,136 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 2025-02-22 17:00:57.443 [main] INFO  com.jaehua.todolist.service.TaskServiceTest - Started TaskServiceTest in 4.961 seconds (process running for 6.242)
 2025-02-22 17:00:57.554 [main] INFO  com.jaehua.todolist.aspect.LogAspect - Request start - {"method":"createTask","ip":"127.0.0.1","httpMethod":"","params":{"taskRequest":{"title":"Test Task","description":"Test Description"}},"class":"TaskServiceImpl","userId":1,"url":"http://localhost"}
 2025-02-22 17:00:57.565 [main] INFO  com.jaehua.todolist.aspect.LogAspect - Request end - {"duration":55,"result":{"id":null,"userId":1,"title":"Test Task","description":"Test Description","status":0,"createdAt":[2025,2,22,17,0,57,556096600],"updatedAt":[2025,2,22,17,0,57,556096600]},"method":"createTask","ip":"127.0.0.1","httpMethod":"","params":{"taskRequest":{"title":"Test Task","description":"Test Description"}},"class":"TaskServiceImpl","userId":1,"url":"http://localhost","status":"success"}
+2025-02-22 17:03:59.583 [main] INFO  com.jaehua.todolist.service.TaskServiceTest - Starting TaskServiceTest using Java 23.0.2 with PID 20712 (started by 姜杰铧 in D:\Project\java\todolist)
+2025-02-22 17:03:59.584 [main] DEBUG com.jaehua.todolist.service.TaskServiceTest - Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-02-22 17:03:59.584 [main] INFO  com.jaehua.todolist.service.TaskServiceTest - The following 1 profile is active: "test"
+2025-02-22 17:04:00.213 [main] WARN  o.s.w.context.support.GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'cacheManager' defined in class path resource [com/jaehua/todolist/config/CacheConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=cacheConfig; factoryMethodName=cacheManager; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/jaehua/todolist/config/CacheConfig.class]] for bean 'cacheManager' since there is already [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=true; factoryBeanName=com.jaehua.todolist.config.TestCacheConfig; factoryMethodName=cacheManager; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/jaehua/todolist/config/TestCacheConfig.class]] bound.
+2025-02-22 17:04:00.220 [main] INFO  o.s.b.a.logging.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-02-22 17:04:00.236 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'cacheManager', defined in class path resource [com/jaehua/todolist/config/CacheConfig.class], could not be registered. A bean with that name has already been defined in class path resource [com/jaehua/todolist/config/TestCacheConfig.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2025-02-22 17:04:00.240 [main] WARN  o.springframework.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] to prepare test instance [com.jaehua.todolist.service.TaskServiceTest@34332b8d]
+java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@37854b34 testClass = com.jaehua.todolist.service.TaskServiceTest, locations = [], classes = [com.jaehua.todolist.TodolistApplication], contextInitializerClasses = [], activeProfiles = ["test"], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [[ImportsContextCustomizer@48eb001a key = [com.jaehua.todolist.config.TestCacheConfig]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@32502377, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@21282ed8, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@69e09b97, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@2d52216b, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@60099951, org.springframework.boot.test.context.SpringBootTestAnnotation@a0961f9f], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:180)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:191)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:130)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:163)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:378)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:383)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:378)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1709)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:315)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:807)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:377)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:290)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:289)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+Caused by: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'cacheManager' defined in class path resource [com/jaehua/todolist/config/CacheConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=cacheConfig; factoryMethodName=cacheManager; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/jaehua/todolist/config/CacheConfig.class]] for bean 'cacheManager' since there is already [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=true; factoryBeanName=com.jaehua.todolist.config.TestCacheConfig; factoryMethodName=cacheManager; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/jaehua/todolist/config/TestCacheConfig.class]] bound.
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.registerBeanDefinition(DefaultListableBeanFactory.java:1017)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:277)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:428)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:289)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1454)
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152)
+	... 72 common frames omitted
+2025-02-22 17:05:38.870 [main] INFO  com.jaehua.todolist.service.TaskServiceTest - Starting TaskServiceTest using Java 23.0.2 with PID 7820 (started by 姜杰铧 in D:\Project\java\todolist)
+2025-02-22 17:05:38.871 [main] DEBUG com.jaehua.todolist.service.TaskServiceTest - Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-02-22 17:05:38.872 [main] INFO  com.jaehua.todolist.service.TaskServiceTest - The following 1 profile is active: "test"
+2025-02-22 17:05:39.864 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-02-22 17:05:39.867 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-02-22 17:05:39.899 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+2025-02-22 17:05:40.036 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'taskMapper' and 'com.jaehua.todolist.mapper.TaskMapper' mapperInterface. Bean already defined with the same name!
+2025-02-22 17:05:40.036 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.jaehua.todolist.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2025-02-22 17:05:40.037 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.jaehua.todolist.mapper]' package. Please check your configuration.
+2025-02-22 17:05:42.932 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@54d9b23a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@15ae31b, org.springframework.security.web.context.SecurityContextHolderFilter@38991781, org.springframework.security.web.header.HeaderWriterFilter@5cd2adc7, org.springframework.web.filter.CorsFilter@428e9be2, org.springframework.security.web.authentication.logout.LogoutFilter@425a5c2e, com.jaehua.todolist.security.JwtAuthFilter@3e729d46, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@57c7ec30, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@729de0e1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2723b0d0, org.springframework.security.web.session.SessionManagementFilter@1c0a143, org.springframework.security.web.access.ExceptionTranslationFilter@e60c466, org.springframework.security.web.access.intercept.AuthorizationFilter@372e972d]
+2025-02-22 17:05:43.648 [main] INFO  com.jaehua.todolist.service.TaskServiceTest - Started TaskServiceTest in 5.256 seconds (process running for 6.563)
+2025-02-22 17:05:43.753 [main] INFO  com.jaehua.todolist.aspect.LogAspect - Request start - {"method":"createTask","ip":"127.0.0.1","httpMethod":"","params":{"taskRequest":{"title":"Test Task","description":"Test Description"}},"class":"TaskServiceImpl","userId":1,"url":"http://localhost"}
+2025-02-22 17:05:43.761 [main] INFO  com.jaehua.todolist.aspect.LogAspect - Request end - {"duration":49,"result":{"id":null,"userId":1,"title":"Test Task","description":"Test Description","status":0,"createdAt":[2025,2,22,17,5,43,754423300],"updatedAt":[2025,2,22,17,5,43,754423300]},"method":"createTask","ip":"127.0.0.1","httpMethod":"","params":{"taskRequest":{"title":"Test Task","description":"Test Description"}},"class":"TaskServiceImpl","userId":1,"url":"http://localhost","status":"success"}

@@ -7,11 +7,17 @@ spring:
   
   flyway:
     enabled: false
+
+  cache:
+    type: none
+    
+  main:
+    allow-bean-definition-overriding: true
+
   security:
     user:
       name: user
       password: password
-
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
