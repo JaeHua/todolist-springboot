@@ -3,38 +3,46 @@ version: '3.8'
 services:
   app:
     build: .
-    container_name: todolist-app
     ports:
-      - "8080:8080"
+      - "5005:5005"
     environment:
       - SPRING_PROFILES_ACTIVE=prod
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/todolist?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/todolist?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=jh529529
+      - SPRING_DATASOURCE_PASSWORD=root
       - SPRING_REDIS_HOST=redis
+      - SPRING_REDIS_PORT=6379
     depends_on:
       - mysql
       - redis
+    networks:
+      - todolist-network
 
   mysql:
     image: mysql:8.0
-    container_name: todolist-mysql
+    ports:
+      - "5006:3306"
     environment:
       - MYSQL_DATABASE=todolist
-      - MYSQL_ROOT_PASSWORD=jh529529
-    ports:
-      - "3306:3306"
+      - MYSQL_ROOT_PASSWORD=root
     volumes:
       - mysql-data:/var/lib/mysql
-    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+      - ./src/main/resources/db/migration:/docker-entrypoint-initdb.d
+    networks:
+      - todolist-network
 
   redis:
-    image: redis:7.0
-    container_name: todolist-redis
+    image: redis:6.2
     ports:
-      - "6379:6379"
+      - "5007:6379"
     volumes:
       - redis-data:/data
+    networks:
+      - todolist-network
+
+networks:
+  todolist-network:
+    driver: bridge
 
 volumes:
   mysql-data:
