@@ -8,15 +8,14 @@ spring:
   
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${DB_HOST}:${DB_PORT}/todolist?useUnicode=true&characterEncoding=utf-8&useSSL=true&allowPublicKeyRetrieval=true
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    url: jdbc:mysql://mysql:3306/todolist?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: jh529529
 
   data:
     redis:
-      host: ${REDIS_HOST}
-      port: ${REDIS_PORT}
-      password: ${REDIS_PASSWORD}
+      host: redis
+      port: 6379
       database: 0
   
   cache:
@@ -35,9 +34,11 @@ spring:
     clean-disabled: true
 
 logging:
+  file:
+    name: /var/log/todolist/app.log
   level:
-    root: warn
-    com.jaehua.todolist: info
+    root: INFO
+    com.jaehua.todolist: INFO
 
 jwt:
   secret: ${JWT_SECRET}
