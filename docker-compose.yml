@@ -1,49 +1,137 @@
 version: '3.8'
 
-services:
-  app:
-    build: .
-    ports:
-      - "5005:5005"
-    environment:
-      - SPRING_PROFILES_ACTIVE=prod
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/todolist?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-      - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=root
-      - SPRING_REDIS_HOST=redis
-      - SPRING_REDIS_PORT=6379
-    depends_on:
-      - mysql
-      - redis
-    networks:
-      - todolist-network
 
-  mysql:
-    image: mysql:8.0
-    ports:
-      - "5006:3306"
-    environment:
-      - MYSQL_DATABASE=todolist
-      - MYSQL_ROOT_PASSWORD=root
-    volumes:
-      - mysql-data:/var/lib/mysql
-      - ./src/main/resources/db/migration:/docker-entrypoint-initdb.d
-    networks:
-      - todolist-network
-
-  redis:
-    image: redis:6.2
-    ports:
-      - "5007:6379"
-    volumes:
-      - redis-data:/data
-    networks:
-      - todolist-network
 
 networks:
+
   todolist-network:
+
     driver: bridge
 
+
+
+services:
+
+  # Redis 服务
+
+  redis:
+
+    image: redis:6.2
+
+    container_name: Todolist_Redis
+
+    ports:
+
+      - 5007:6379
+
+    volumes:
+
+      - redis-data:/data
+
+    networks:
+
+      - todolist-network
+
+
+
+  # MySQL 服务
+
+  mysql:
+
+    image: mysql:8.0
+
+    container_name: Todolist_Mysql
+
+    ports:
+
+      - 5006:3306
+
+    volumes:
+
+      - mysql-data:/var/lib/mysql
+
+    environment:
+
+      - MYSQL_DATABASE=todolist
+
+      - MYSQL_ROOT_PASSWORD=root
+
+      - TZ=Asia/Shanghai
+
+    networks:
+
+      - todolist-network
+
+    restart: always
+
+    healthcheck:
+
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+
+      interval: 10s
+
+      timeout: 5s
+
+      retries: 5
+
+      start_period: 30s
+
+
+
+  # 应用服务
+
+  app:
+
+    image: registry.cn-hangzhou.aliyuncs.com/jianglele/yuedoo:todolist
+
+    container_name: Todolist_App
+
+    ports:
+
+      - 5005:5005
+
+    volumes:
+
+      - /mnt/volume1/docker/Todolist/logs:/app/logs
+
+    environment:
+
+      - SPRING_PROFILES_ACTIVE=prod
+
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/todolist?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+
+      - SPRING_DATASOURCE_USERNAME=root
+
+      - SPRING_DATASOURCE_PASSWORD=root
+
+      - SPRING_REDIS_HOST=redis
+
+      - SPRING_REDIS_PORT=6379
+
+      - TZ=Asia/Shanghai
+
+      - JWT_SECRET=5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437
+
+    restart: always
+
+    depends_on:
+
+      mysql:
+
+        condition: service_healthy
+
+      redis:
+
+        condition: service_started
+
+    networks:
+
+      - todolist-network
+
+
+
 volumes:
+
   mysql-data:
+
   redis-data: 
