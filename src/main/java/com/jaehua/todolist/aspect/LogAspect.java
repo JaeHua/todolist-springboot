@@ -24,11 +24,9 @@ import java.util.Map;
 @Component
 @Slf4j
 public class LogAspect {
-    @Around("@annotation(org.springframework.web.bind.annotation.RequestMapping) || " +
-            "@annotation(org.springframework.web.bind.annotation.GetMapping) || " +
-            "@annotation(org.springframework.web.bind.annotation.PostMapping) || " +
-            "@annotation(org.springframework.web.bind.annotation.PutMapping) || " +
-            "@annotation(org.springframework.web.bind.annotation.DeleteMapping)")
+    
+    // 只拦截我们自己的 controller 包
+    @Around("execution(* com.jaehua.todolist.controller..*.*(..))")
     public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         long startTime = System.currentTimeMillis();
         String className = joinPoint.getTarget().getClass().getSimpleName();
@@ -38,7 +36,12 @@ public class LogAspect {
         // 只在非认证接口获取用户ID
         Long userId = null;
         if (!className.equals("AuthController")) {
-            userId = SecurityUtils.getCurrentUserId();
+            try {
+                userId = SecurityUtils.getCurrentUserId();
+            } catch (Exception e) {
+                // 忽略获取用户ID时的异常
+                log.debug("Failed to get current user id", e);
+            }
         }
 
         log.info("Request => Class: {}, Method: {}, UserId: {}, Args: {}", 
