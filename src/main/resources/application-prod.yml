@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 5005
 
 spring:
   application:
@@ -10,7 +10,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://mysql:3306/todolist?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
     username: root
-    password: jh529529
+    password: ${MYSQL_ROOT_PASSWORD}
 
   data:
     redis:
