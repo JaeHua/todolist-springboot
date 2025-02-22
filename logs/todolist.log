@@ -2413,3 +2413,296 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 2025-02-22 17:13:22.077 [main] INFO  com.jaehua.todolist.service.TaskServiceTest - Started TaskServiceTest in 5.575 seconds (process running for 7.032)
 2025-02-22 17:13:22.186 [main] INFO  com.jaehua.todolist.aspect.LogAspect - Request start - {"method":"createTask","ip":"127.0.0.1","httpMethod":"","params":{"taskRequest":{"title":"Test Task","description":"Test Description"}},"class":"TaskServiceImpl","userId":1,"url":"http://localhost"}
 2025-02-22 17:13:22.197 [main] INFO  com.jaehua.todolist.aspect.LogAspect - Request end - {"duration":54,"result":{"id":null,"userId":1,"title":"Test Task","description":"Test Description","status":0,"createdAt":[2025,2,22,17,13,22,189542800],"updatedAt":[2025,2,22,17,13,22,189542800]},"method":"createTask","ip":"127.0.0.1","httpMethod":"","params":{"taskRequest":{"title":"Test Task","description":"Test Description"}},"class":"TaskServiceImpl","userId":1,"url":"http://localhost","status":"success"}
+2025-02-22 19:50:43.075 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-02-22 19:50:43.118 [restartedMain] INFO  com.jaehua.todolist.TodolistApplication - Starting TodolistApplication using Java 23.0.2 with PID 20840 (D:\Project\java\todolist\target\classes started by 姜杰铧 in D:\Project\java\todolist)
+2025-02-22 19:50:43.118 [restartedMain] DEBUG com.jaehua.todolist.TodolistApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-02-22 19:50:43.118 [restartedMain] INFO  com.jaehua.todolist.TodolistApplication - The following 1 profile is active: "dev"
+2025-02-22 19:50:43.177 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-22 19:50:43.177 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-22 19:50:44.243 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-02-22 19:50:44.247 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-02-22 19:50:44.273 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2025-02-22 19:50:44.394 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'taskMapper' and 'com.jaehua.todolist.mapper.TaskMapper' mapperInterface. Bean already defined with the same name!
+2025-02-22 19:50:44.394 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.jaehua.todolist.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2025-02-22 19:50:44.394 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.jaehua.todolist.mapper]' package. Please check your configuration.
+2025-02-22 19:50:45.142 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-02-22 19:50:45.152 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-22 19:50:45.154 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-22 19:50:45.154 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-02-22 19:50:45.212 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-22 19:50:45.212 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2034 ms
+2025-02-22 19:50:45.403 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-22 19:50:45.529 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@338e67a
+2025-02-22 19:50:45.532 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-22 19:50:45.623 [restartedMain] INFO  org.flywaydb.core.internal.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-02-22 19:50:45.623 [restartedMain] INFO  org.flywaydb.core.internal.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-02-22 19:50:45.623 [restartedMain] INFO  org.flywaydb.core.internal.license.VersionPrinter - 
+2025-02-22 19:50:45.644 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/todolist (MySQL 8.0)
+2025-02-22 19:50:45.691 [restartedMain] INFO  org.flywaydb.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.023s)
+2025-02-22 19:50:45.701 [restartedMain] INFO  org.flywaydb.core.internal.command.DbMigrate - Current version of schema `todolist`: 1
+2025-02-22 19:50:45.704 [restartedMain] INFO  org.flywaydb.core.internal.command.DbMigrate - Schema `todolist` is up to date. No migration necessary.
+2025-02-22 19:50:45.875 [restartedMain] DEBUG com.jaehua.todolist.security.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2025-02-22 19:50:46.411 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 11ee270e-ed1a-4707-bcb8-cdcb01f71118
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-22 19:50:46.642 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@40b47f84, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@74ea7f3b, org.springframework.security.web.context.SecurityContextHolderFilter@1764e6c9, org.springframework.security.web.header.HeaderWriterFilter@5441ba4a, org.springframework.web.filter.CorsFilter@77673f8b, org.springframework.security.web.authentication.logout.LogoutFilter@6ac82235, com.jaehua.todolist.security.JwtAuthFilter@7675f4c8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7eec51d0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5da9feb2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@490f3f36, org.springframework.security.web.session.SessionManagementFilter@575d2381, org.springframework.security.web.access.ExceptionTranslationFilter@3b1c58bd, org.springframework.security.web.access.intercept.AuthorizationFilter@6ecdb87d]
+2025-02-22 19:50:47.112 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-02-22 19:50:47.134 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-22 19:50:47.148 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-02-22 19:50:47.157 [restartedMain] INFO  com.jaehua.todolist.TodolistApplication - Started TodolistApplication in 4.6 seconds (process running for 5.459)
+2025-02-22 19:50:52.804 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-22 19:50:52.804 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-02-22 19:50:52.805 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-02-22 19:50:54.190 [http-nio-8080-exec-8] INFO  org.springdoc.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 341 ms
+2025-02-22 19:51:06.752 [http-nio-8080-exec-3] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.ClassCastException: class java.lang.String cannot be cast to class com.jaehua.todolist.entity.User (java.lang.String is in module java.base of loader 'bootstrap'; com.jaehua.todolist.entity.User is in unnamed module of loader org.springframework.boot.devtools.restart.classloader.RestartClassLoader @7d1bd01c)] with root cause
+java.lang.ClassCastException: class java.lang.String cannot be cast to class com.jaehua.todolist.entity.User (java.lang.String is in module java.base of loader 'bootstrap'; com.jaehua.todolist.entity.User is in unnamed module of loader org.springframework.boot.devtools.restart.classloader.RestartClassLoader @7d1bd01c)
+	at com.jaehua.todolist.utils.SecurityUtils.getCurrentUser(SecurityUtils.java:8)
+	at com.jaehua.todolist.utils.SecurityUtils.getCurrentUserId(SecurityUtils.java:11)
+	at com.jaehua.todolist.aspect.LogAspect.logAround(LogAspect.java:39)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.jaehua.todolist.controller.v1.AuthController$$SpringCGLIB$$0.register(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.jaehua.todolist.security.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:37)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-02-22 19:52:26.563 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2025-02-22 19:52:26.568 [Thread-6] INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-02-22 19:52:26.587 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-02-22 19:52:26.595 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-02-22 19:52:26.685 [restartedMain] INFO  com.jaehua.todolist.TodolistApplication - Starting TodolistApplication using Java 23.0.2 with PID 20840 (D:\Project\java\todolist\target\classes started by 姜杰铧 in D:\Project\java\todolist)
+2025-02-22 19:52:26.686 [restartedMain] DEBUG com.jaehua.todolist.TodolistApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-02-22 19:52:26.686 [restartedMain] INFO  com.jaehua.todolist.TodolistApplication - The following 1 profile is active: "dev"
+2025-02-22 19:52:26.915 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-02-22 19:52:26.916 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-02-22 19:52:26.921 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2025-02-22 19:52:26.953 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'taskMapper' and 'com.jaehua.todolist.mapper.TaskMapper' mapperInterface. Bean already defined with the same name!
+2025-02-22 19:52:26.953 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.jaehua.todolist.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2025-02-22 19:52:26.953 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.jaehua.todolist.mapper]' package. Please check your configuration.
+2025-02-22 19:52:27.189 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-02-22 19:52:27.189 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-22 19:52:27.190 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-22 19:52:27.190 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-02-22 19:52:27.219 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-22 19:52:27.219 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 531 ms
+2025-02-22 19:52:27.284 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2025-02-22 19:52:27.288 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@71632b63
+2025-02-22 19:52:27.288 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2025-02-22 19:52:27.296 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/todolist (MySQL 8.0)
+2025-02-22 19:52:27.306 [restartedMain] INFO  org.flywaydb.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.005s)
+2025-02-22 19:52:27.313 [restartedMain] INFO  org.flywaydb.core.internal.command.DbMigrate - Current version of schema `todolist`: 1
+2025-02-22 19:52:27.314 [restartedMain] INFO  org.flywaydb.core.internal.command.DbMigrate - Schema `todolist` is up to date. No migration necessary.
+2025-02-22 19:52:27.346 [restartedMain] DEBUG com.jaehua.todolist.security.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2025-02-22 19:52:27.445 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: fd65cb74-4430-48b9-ba94-ecd022a67540
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-22 19:52:27.533 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@56146e29, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e943806, org.springframework.security.web.context.SecurityContextHolderFilter@bbd056, org.springframework.security.web.header.HeaderWriterFilter@6c04143c, org.springframework.web.filter.CorsFilter@44641034, org.springframework.security.web.authentication.logout.LogoutFilter@223f4ce9, com.jaehua.todolist.security.JwtAuthFilter@7d6ef5d3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7a73c924, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@11d7a713, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ca26d60, org.springframework.security.web.session.SessionManagementFilter@7cc43312, org.springframework.security.web.access.ExceptionTranslationFilter@5afce663, org.springframework.security.web.access.intercept.AuthorizationFilter@6a224383]
+2025-02-22 19:52:27.702 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-02-22 19:52:27.709 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-22 19:52:27.712 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-02-22 19:52:27.714 [restartedMain] INFO  com.jaehua.todolist.TodolistApplication - Started TodolistApplication in 1.071 seconds (process running for 106.018)
+2025-02-22 19:52:27.716 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-02-22 19:52:41.405 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-22 19:52:41.405 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-02-22 19:52:41.407 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-02-22 19:52:41.440 [http-nio-8080-exec-1] INFO  com.jaehua.todolist.aspect.LogAspect - Request => Class: AuthController, Method: register, UserId: null, Args: [RegisterRequest(username=string, password=string, email=ac@ac.com)]
+2025-02-22 19:52:41.584 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2025-02-22 19:52:41.586 [Thread-8] INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-02-22 19:52:41.707 [http-nio-8080-exec-1] INFO  com.jaehua.todolist.aspect.LogAspect - Response => Class: AuthController, Method: register, UserId: null, Result: Result(code=200, message=Success, data=User(id=8, username=string, password=$2a$10$rCXWTn7HKMHnLOrgTbuhqeLaNoXNdZ1KJss6rAK4/jjScIY7nTS3m, email=ac@ac.com, createdAt=2025-02-22T19:52:41)), Time: 269ms
+2025-02-22 19:52:41.721 [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2025-02-22 19:52:41.723 [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2025-02-22 19:52:41.798 [restartedMain] INFO  com.jaehua.todolist.TodolistApplication - Starting TodolistApplication using Java 23.0.2 with PID 20840 (D:\Project\java\todolist\target\classes started by 姜杰铧 in D:\Project\java\todolist)
+2025-02-22 19:52:41.798 [restartedMain] DEBUG com.jaehua.todolist.TodolistApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-02-22 19:52:41.798 [restartedMain] INFO  com.jaehua.todolist.TodolistApplication - The following 1 profile is active: "dev"
+2025-02-22 19:52:42.001 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-02-22 19:52:42.002 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-02-22 19:52:42.006 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2025-02-22 19:52:42.044 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'taskMapper' and 'com.jaehua.todolist.mapper.TaskMapper' mapperInterface. Bean already defined with the same name!
+2025-02-22 19:52:42.044 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.jaehua.todolist.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2025-02-22 19:52:42.044 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.jaehua.todolist.mapper]' package. Please check your configuration.
+2025-02-22 19:52:42.108 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-02-22 19:52:42.109 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-22 19:52:42.109 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-22 19:52:42.109 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-02-22 19:52:42.139 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-22 19:52:42.139 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 338 ms
+2025-02-22 19:52:42.189 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2025-02-22 19:52:42.192 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6b8d66d8
+2025-02-22 19:52:42.192 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2025-02-22 19:52:42.202 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/todolist (MySQL 8.0)
+2025-02-22 19:52:42.212 [restartedMain] INFO  org.flywaydb.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.006s)
+2025-02-22 19:52:42.221 [restartedMain] INFO  org.flywaydb.core.internal.command.DbMigrate - Current version of schema `todolist`: 1
+2025-02-22 19:52:42.221 [restartedMain] INFO  org.flywaydb.core.internal.command.DbMigrate - Schema `todolist` is up to date. No migration necessary.
+2025-02-22 19:52:42.262 [restartedMain] DEBUG com.jaehua.todolist.security.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2025-02-22 19:52:42.341 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: c250924e-229d-4653-9524-97b2eff0e33e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-22 19:52:42.396 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@11c58f23, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@422495b6, org.springframework.security.web.context.SecurityContextHolderFilter@189ccd68, org.springframework.security.web.header.HeaderWriterFilter@286e8b66, org.springframework.web.filter.CorsFilter@5fa0685d, org.springframework.security.web.authentication.logout.LogoutFilter@67268297, com.jaehua.todolist.security.JwtAuthFilter@55a76057, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7f2b4262, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23c2d35a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d8e502b, org.springframework.security.web.session.SessionManagementFilter@660b9b8e, org.springframework.security.web.access.ExceptionTranslationFilter@70f2e455, org.springframework.security.web.access.intercept.AuthorizationFilter@77d6a74d]
+2025-02-22 19:52:42.516 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-02-22 19:52:42.525 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-22 19:52:42.528 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-02-22 19:52:42.531 [restartedMain] INFO  com.jaehua.todolist.TodolistApplication - Started TodolistApplication in 0.762 seconds (process running for 120.834)
+2025-02-22 19:52:42.532 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-02-22 19:52:43.977 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2025-02-22 19:52:43.978 [Thread-13] INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-02-22 19:52:43.982 [Thread-13] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2025-02-22 19:52:43.984 [Thread-13] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2025-02-22 19:52:44.039 [restartedMain] INFO  com.jaehua.todolist.TodolistApplication - Starting TodolistApplication using Java 23.0.2 with PID 20840 (D:\Project\java\todolist\target\classes started by 姜杰铧 in D:\Project\java\todolist)
+2025-02-22 19:52:44.041 [restartedMain] DEBUG com.jaehua.todolist.TodolistApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-02-22 19:52:44.041 [restartedMain] INFO  com.jaehua.todolist.TodolistApplication - The following 1 profile is active: "dev"
+2025-02-22 19:52:44.165 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-02-22 19:52:44.165 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-02-22 19:52:44.169 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-02-22 19:52:44.198 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'taskMapper' and 'com.jaehua.todolist.mapper.TaskMapper' mapperInterface. Bean already defined with the same name!
+2025-02-22 19:52:44.198 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.jaehua.todolist.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2025-02-22 19:52:44.198 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.jaehua.todolist.mapper]' package. Please check your configuration.
+2025-02-22 19:52:44.268 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-02-22 19:52:44.268 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-22 19:52:44.269 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-22 19:52:44.269 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-02-22 19:52:44.298 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-22 19:52:44.298 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 256 ms
+2025-02-22 19:52:44.358 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2025-02-22 19:52:44.361 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b910602
+2025-02-22 19:52:44.361 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2025-02-22 19:52:44.368 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/todolist (MySQL 8.0)
+2025-02-22 19:52:44.376 [restartedMain] INFO  org.flywaydb.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.004s)
+2025-02-22 19:52:44.381 [restartedMain] INFO  org.flywaydb.core.internal.command.DbMigrate - Current version of schema `todolist`: 1
+2025-02-22 19:52:44.382 [restartedMain] INFO  org.flywaydb.core.internal.command.DbMigrate - Schema `todolist` is up to date. No migration necessary.
+2025-02-22 19:52:44.408 [restartedMain] DEBUG com.jaehua.todolist.security.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2025-02-22 19:52:44.501 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 25553f60-60f9-4c3c-ad6f-74af9eb3c434
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-22 19:52:44.561 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@69d75b96, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@188802f9, org.springframework.security.web.context.SecurityContextHolderFilter@30af94aa, org.springframework.security.web.header.HeaderWriterFilter@aafc594, org.springframework.web.filter.CorsFilter@6b762b29, org.springframework.security.web.authentication.logout.LogoutFilter@293b12bf, com.jaehua.todolist.security.JwtAuthFilter@105c89d8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@12bf8b9d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@66486f3b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@19ee2522, org.springframework.security.web.session.SessionManagementFilter@75dedd09, org.springframework.security.web.access.ExceptionTranslationFilter@512e7399, org.springframework.security.web.access.intercept.AuthorizationFilter@6222090c]
+2025-02-22 19:52:44.699 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-02-22 19:52:44.706 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-22 19:52:44.709 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-02-22 19:52:44.716 [restartedMain] INFO  com.jaehua.todolist.TodolistApplication - Started TodolistApplication in 0.699 seconds (process running for 123.019)
+2025-02-22 19:52:44.718 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-02-22 19:52:52.367 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-22 19:52:52.367 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-02-22 19:52:52.368 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-02-22 19:52:52.376 [http-nio-8080-exec-1] INFO  com.jaehua.todolist.aspect.LogAspect - Request => Class: AuthController, Method: register, UserId: null, Args: [RegisterRequest(username=string, password=string, email=ac@ac.com)]
+2025-02-22 19:52:52.382 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.jaehua.todolist.exception.BusinessException: 用户已存在]
+2025-02-22 19:52:56.907 [http-nio-8080-exec-4] INFO  com.jaehua.todolist.aspect.LogAspect - Request => Class: AuthController, Method: register, UserId: null, Args: [RegisterRequest(username=string, password=string, email=ac@ac.com)]
+2025-02-22 19:52:56.913 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.jaehua.todolist.exception.BusinessException: 用户已存在]
+2025-02-22 19:54:06.607 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2025-02-22 19:54:06.609 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
