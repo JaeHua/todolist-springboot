@@ -55,6 +55,7 @@
 - 单元测试覆盖
 
 ## 项目结构
+```
 src/main/java/com/jaehua/todolist
 ├── TodolistApplication.java
 ├── aspect # AOP 切面
@@ -126,7 +127,8 @@ docker-compose up -d
 
 ## CI/CD 流程
 这里使用的是阿里云的云效，在云效中配置好CI/CD流程，然后就可以在云效中进行构建和部署了
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/f24817b5-d585-4b82-a8e0-a7543d7147f9)
+
 
 
 ## API 文档
