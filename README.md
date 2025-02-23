@@ -29,9 +29,8 @@
 
 ### 部署和运维
 - Docker & Docker Compose
-- GitHub Actions (CI/CD)
+- devops-aliyun
 - SonarQube (代码质量)
-- Prometheus & Grafana (监控)
 
 ## 功能特性
 
@@ -127,11 +126,14 @@ docker-compose up -d
 
 ## CI/CD 流程
 这里使用的是阿里云的云效，在云效中配置好CI/CD流程，然后就可以在云效中进行构建和部署了
+![Uploading image.png…]()
 
 
 ## API 文档
 
 启动项目后访问: http://localhost:5005/swagger-ui.html
+![image](https://github.com/user-attachments/assets/5324c29c-a934-4a53-8824-74b3f4e559e0)
+
 
 ## 测试
 
